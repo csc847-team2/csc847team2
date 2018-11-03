@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/javascripts/test.js"></script>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <button id="myBtn">Click Me</button>
-    <input id="inp" type='file'>
-    <img id="myimg" height="150">
-    <p id="outputTxt"></p>
-    <!-- <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="file" name="avatar" />
-      <input type="submit"/>
-    </form> -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/8a92be1af5.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script type="text/javascript" src="/javascripts/test.js"></script>
+  <title><%= title %></title>
+</head>
+<body background="/images/bg.jpg">
+  <nav class="navbar navbar-dark" style="background-color: #1a4b6e;">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="margin:0px auto; font-weight: bold;">CSC 847 Cloud and Distributed Computing: Concepts and Applications - Fall 2018</a>
+    </div>
+  </nav>
+  
+  <div class="jumbotron text-white bg-dark" style="padding: 5px">
+    <div class="container">
+      <h1 align="center" style="font-weight: bold;">Project Name Here...</h1>
+      <p class="lead">--> Extract the textual information from a photograph (Google Cloud Vision API: Optical character recognition)</p>
+      <p class="lead">--> Translate to a language of your choice (Google Cloud Translation API: Cloud AutoML Translation)</p>
+      <p class="lead">--> Read out the text (Google Cloud Text-To-Speech API: Text-to-speech conversion powered by ML)</p>
+    </div>
+  </div>
+  
+  <div align="center" >
+    <div class="form-group row" style="margin: 20px;" align="center">
+      <div class="col-5" style="background: #fefefe; border-radius: 10px;">
+        <img id="myimg" height="350px" width="350px" style="margin-top:20px; margin-bottom:10px;">
+        <input id="inp" type='file' style="margin-bottom:10px;">
+      </div>
+      <div class="col-2"  align="center" style="padding-top:175px;">
+        <button id="myBtn" class="btn btn-primary">--> Extract Text --></button>
+      </div>
+      <div class="col-5" style="background: #fefefe; border-radius: 10px;">
+        <p id="outputTxt" height="350" width="350" style="padding:30px; font-size: medium;"></p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <img id="myimg" height="150"> -->
+  <!-- <p id="outputTxt"></p> -->
+  <!-- <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="avatar" />
+    <input type="submit"/>
+  </form> -->
+</body>
 </html>
