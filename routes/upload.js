@@ -21,8 +21,7 @@ module.exports = router;
 // TODO: Rewrite & Move this function to a separate file.
 // No business logic should be kept inside routes(Controller).
 function extractTextFromInputImageAndSendResponse(req, res) {
-    var x = req.body.test1;
-    console.log('testing:' + x);
+    // console.log('testing:' + req.body.test1);
     const client = new vision.ImageAnnotatorClient();
     const fileName = './uploads/imagefile.jpg';
     client.documentTextDetection(fileName).then(results => {

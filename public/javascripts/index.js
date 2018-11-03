@@ -4,7 +4,26 @@ $(document).ready(function() {
     $("#extractBtn").click(function() {
         uploadImageToServer();
     }); 
+    $("#translateBtn").click(function() {
+        fetchTranslationFromServer();
+    });
 });
+
+function fetchTranslationFromServer() {
+    var inputTextStr = document.getElementById("outputTxt").innerHTML;
+    var langCode = 'ru';
+    const body = {
+        inputStr: inputTextStr,
+        languageCode: langCode,
+    };
+    $.post("/translate", body, function (response) {
+        if(response.success) {
+            document.getElementById("outputTxt").innerHTML = response.translation;
+        } else {
+            window.alert(JSON.stringify(response.error));
+        }
+    });
+}
 
 /*
 POST request with encryption type as 'multipart/form-data' that's
@@ -15,7 +34,7 @@ function uploadImageToServer() {
     var file = fileInput.files[0];
     var formData = new FormData();
     formData.append('imagefile', file);//Append Image file to form data
-    formData.append('test1', 'abc');//Append any other key-value pair to form data
+    // formData.append('test1', 'abc');//Append any other key-value pair to form data
     $.ajax({
         url: "/upload",
         type: "POST",
