@@ -1,0 +1,7 @@
+{
+    "RESULT_TOPIC": "umg_topic_name",
+    "RESULT_BUCKET": "csc847textbucket",
+    "TRANSLATE_TOPIC": "umg_translate_topic_name",
+    "TRANSLATE": true,
+    "TO_LANG": ["en", "fr", "es", "ja", "ru"]
+}
