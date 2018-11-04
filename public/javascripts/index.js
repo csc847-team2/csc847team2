@@ -1,4 +1,43 @@
-var currLangSelection = 'en';
+var currLangSelection = 'af';
+
+var languageDict = {
+    'Afrikaans': 'af',
+    'Arabic': 'ar',
+    'Bengali': 'bn',
+    'Chinese': 'zh-CN',
+    'English': 'en',
+    'French': 'fr',
+    'German': 'de',
+    'Greek': 'el',
+    'Gujarati': 'gu',
+    'Hebrew': 'he**',
+    'Hindi': 'hi',
+    'Indonesian': 'id',
+    'Italian': 'it',
+    'Japanese': 'ja',
+    'Kannada': 'kn',
+    'Korean': 'ko',
+    'Malayalam': 'ml',
+    'Marathi': 'mr',
+    'Nepali': 'ne',
+    'Pashto': 'ps',
+    'Persian': 'fa',
+    'Polish': 'pl',
+    'Portuguese': 'pt',
+    'Punjabi': 'pa',
+    'Russian': 'ru',
+    'Sindhi': 'sd',
+    'Sinhalese': 'si',
+    'Spanish': 'es',
+    'Swahili': 'sw',
+    'Tamil': 'ta',
+    'Telugu': 'te',
+    'Turkish': 'tr',
+    'Urdu': 'ur',
+    'Vietnamese': 'vi',
+    'Xhosa': 'xh',
+    'Zulu': 'zu'
+};
 
 //On HTML Page load
 $(document).ready(function() {
@@ -67,48 +106,20 @@ function readFile() {
     }
 }
 
-// TODO: Rewrite this method. Code is too repititive.
 function populateLanguageDropdownList() {
-    var languageDropdownList = document.getElementById('languageDropdown');
-    let anchorElement = document.createElement('a');
-        anchorElement.setAttribute('class', 'dropdown-item');
-        anchorElement.setAttribute('onmouseover', '');
-        anchorElement.setAttribute('style', 'cursor: pointer;');
-        anchorElement.innerHTML = 'English';
-        anchorElement.addEventListener("click", function (event) {
-            $("#btnLanguageDropdown").text('English');
-            currLangSelection = 'en';
-        });
-        languageDropdownList.appendChild(anchorElement);
-        let anchorElement2 = document.createElement('a');
-        anchorElement2.setAttribute('class', 'dropdown-item');
-        anchorElement2.setAttribute('onmouseover', '');
-        anchorElement2.setAttribute('style', 'cursor: pointer;');
-        anchorElement2.innerHTML = 'Hindi';
-        anchorElement2.addEventListener("click", function (event) {
-            $("#btnLanguageDropdown").text('Hindi');
-            currLangSelection = 'hi';
-        });
-        languageDropdownList.appendChild(anchorElement2);
-        let anchorElement3 = document.createElement('a');
-        anchorElement3.setAttribute('class', 'dropdown-item');
-        anchorElement3.setAttribute('onmouseover', '');
-        anchorElement3.setAttribute('style', 'cursor: pointer;');
-        anchorElement3.innerHTML = 'Russian';
-        anchorElement3.addEventListener("click", function (event) {
-            $("#btnLanguageDropdown").text('Russian');
-            currLangSelection = 'ru';
-        });
-        languageDropdownList.appendChild(anchorElement3);
-        let anchorElement4 = document.createElement('a');
-        anchorElement4.setAttribute('class', 'dropdown-item');
-        anchorElement4.setAttribute('onmouseover', '');
-        anchorElement4.setAttribute('style', 'cursor: pointer;');
-        anchorElement4.innerHTML = 'Spanish';
-        anchorElement4.addEventListener("click", function (event) {
-            $("#btnLanguageDropdown").text('Spanish');
-            currLangSelection = 'es';
-        });
-        languageDropdownList.appendChild(anchorElement4);
-    return anchorElement;
+    let languageDropdownList = document.getElementById('languageDropdown');
+    for (let key in languageDict) {
+        if (languageDict.hasOwnProperty(key)) {
+            let anchorElement = document.createElement('a');
+            anchorElement.setAttribute('class', 'dropdown-item');
+            anchorElement.setAttribute('onmouseover', '');
+            anchorElement.setAttribute('style', 'cursor: pointer;');
+            anchorElement.innerHTML = key;
+            anchorElement.addEventListener("click", function (event) {
+                $("#btnLanguageDropdown").text(key);
+                currLangSelection = languageDict[key];
+            });
+            languageDropdownList.appendChild(anchorElement);
+        }
+    }      
 }
