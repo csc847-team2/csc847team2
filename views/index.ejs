@@ -38,18 +38,20 @@
         <img id="inputImg" height="350px" width="350px" style="margin-top:20px; margin-bottom:10px;">
         <input id="fileInputBtn" type='file' style="margin-bottom:10px;">
       </div>
-      <div class="col-1" align="center" style="padding-top:175px;">
-        <button id="extractBtn" class="btn btn-primary">Get Text</button>
+      <div class="col-2" align="center" style="padding-top:175px;">
+        <button id="extractBtn" class="btn btn-primary">Parse Text--></button>
       </div>
-      <div class="col-5" style="background: #fefefe; border-radius: 10px;">
+      <div class="col-4" style="background: #fefefe; border-radius: 10px;">
         <p id="outputTxt" height="350" width="350" style="padding:30px; font-size: medium; margin-bottom:10px;"></p>
       </div>
       <div class="col-2" align="center" style="padding-top:0px;">
+          <div class="btn-group">
+              <button id="btnLanguageDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">English</button>
+              <div id="languageDropdown" class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 48px, 0px); top: 0px; left: 0px; will-change: transform;"></div>
+            </div>
         <button id="translateBtn" class="btn btn-primary">Translate</button>
       </div>
     </div>
-    
-    
   </div>
   
 </body>
