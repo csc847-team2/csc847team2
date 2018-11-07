@@ -17,7 +17,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var uploadRouter = require('./routes/upload');
 var translateRouter = require('./routes/translate');
-var textToSpeechRouter = require('./routes/textToSpeech')
+var textToSpeechRouter = require('./routes/textToSpeech');
 
 var app = express();
 
