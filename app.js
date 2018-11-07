@@ -10,12 +10,14 @@ const pubsub = require('@google-cloud/pubsub');
 const storage = require('@google-cloud/storage');
 const vision = require('@google-cloud/vision');
 const translate = require('@google-cloud/translate');
+const textToSpeech = require('@google-cloud/text-to-speech');
 const Buffer = require('safe-buffer').Buffer;
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var uploadRouter = require('./routes/upload');
 var translateRouter = require('./routes/translate');
+var textToSpeechRouter = require('./routes/textToSpeech')
 
 var app = express();
 
@@ -33,6 +35,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
 app.use('/translate', translateRouter);
+app.use('/textToSpeech', textToSpeechRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
