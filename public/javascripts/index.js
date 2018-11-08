@@ -79,7 +79,7 @@ function createAudioFile() {
         if(response) {
             $.post("/mp3", body, function (response) {
                 //window.open('http://localhost:2000/')
-                $('#frameDiv').html('<iframe src="http://localhost:2000/"></iframe>')
+                $('#frameDiv').html('<iframe src="http://localhost:2000/" style="width:0;height:0;border:0; border:none;"></iframe>')
             });  
         } else {
             window.alert(JSON.stringify(response.error));
