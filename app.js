@@ -18,6 +18,7 @@ var usersRouter = require('./routes/users');
 var uploadRouter = require('./routes/upload');
 var translateRouter = require('./routes/translate');
 var textToSpeechRouter = require('./routes/textToSpeech');
+var playAudioRouter = require('./routes/mp3');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/users', usersRouter);
 app.use('/upload', uploadRouter);
 app.use('/translate', translateRouter);
 app.use('/textToSpeech', textToSpeechRouter);
+app.use('/mp3', playAudioRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

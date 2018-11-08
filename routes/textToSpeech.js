@@ -32,12 +32,15 @@ router.post('/', function(req, res, next) {
         return;
       }
       console.log('Audio content written to file: txtSpeechOutput.mp3');
+      res.sendStatus(200)
     });
 
-    fs.readFile('./routes/txtSpeechOutput.mp3', 'utf8', function(err, contents) {
-      console.log(contents);
-  });
-  console.log('after calling readFile');
+    /*fs.readFile('./routes/txtSpeechOutput.mp3', 'utf8', function(err, contents) {
+      //console.log(contents);
+      console.log('created file')
+      //res.send('success')
+    });
+    console.log('after calling readFile');*/
   });
 });
 

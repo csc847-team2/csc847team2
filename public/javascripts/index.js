@@ -75,8 +75,12 @@ function createAudioFile() {
     let body = {};
     body.input = inputTextStr;
     $.post("/textToSpeech", body, function (response) {
-        if(response.success) {
-            document.getElementById("outputTxt").innerHTML = response.translation;
+        console.log(response)
+        if(response) {
+            $.post("/mp3", body, function (response) {
+                //window.open('http://localhost:2000/')
+                $('#frameDiv').html('<iframe src="http://localhost:2000/"></iframe>')
+            });  
         } else {
             window.alert(JSON.stringify(response.error));
         }
