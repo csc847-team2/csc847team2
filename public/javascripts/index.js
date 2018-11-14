@@ -48,6 +48,9 @@ $(document).ready(function() {
     $("#translateBtn").click(function() {
         fetchTranslationFromServer();
     });
+    $("#speechBtn").click(function() {
+        createAudioFile();
+    });
     populateLanguageDropdownList();
 });
 
@@ -61,6 +64,23 @@ function fetchTranslationFromServer() {
     $.post("/translate", body, function (response) {
         if(response.success) {
             document.getElementById("outputTxt").innerHTML = response.translation;
+        } else {
+            window.alert(JSON.stringify(response.error));
+        }
+    });
+}
+
+function createAudioFile() {
+    var inputTextStr = document.getElementById("outputTxt").innerHTML;
+    let body = {};
+    body.input = inputTextStr;
+    $.post("/textToSpeech", body, function (response) {
+        console.log(response)
+        if(response) {
+            $.post("/mp3", body, function (response) {
+                //window.open('http://localhost:2000/')
+                $('#frameDiv').html('<iframe src="http://localhost:2000/" style="width:0;height:0;border:0; border:none;"></iframe>')
+            });  
         } else {
             window.alert(JSON.stringify(response.error));
         }
