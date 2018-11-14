@@ -72,7 +72,10 @@ function fetchTranslationFromServer() {
 
 function createAudioFile() {
     var inputTextStr = document.getElementById("outputTxt").innerHTML;
-    let body = {};
+    var langCode = currLangSelection;
+    let body = {
+        languageCode: langCode
+    };
     body.input = inputTextStr;
     $.post("/textToSpeech", body, function (response) {
         console.log(response)
